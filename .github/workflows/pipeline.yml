@@ -28,5 +28,5 @@ jobs:
         with:
           build: npm run build
           start: npm start-test
-          commmand: npm run test:e2e
+          command: npm run test:e2e
           wait-on: http//localhost:5000
