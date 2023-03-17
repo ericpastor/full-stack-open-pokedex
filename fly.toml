@@ -6,6 +6,12 @@ kill_timeout = 5
 primary_region = "arn"
 processes = []
 
+[deploy]
+  release_command = "npm run build"
+
+[processes]
+  app = "node app.js"
+
 [env]
   PORT = "8080"
 
@@ -38,8 +44,4 @@ processes = []
     restart_limit = 0
     timeout = "2s"
 
-[deploy]
-  release_command = "npm run build"
 
-[processes]
-  app = "node app.js"
