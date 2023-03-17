@@ -30,6 +30,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
   FlyDeploy:
+    needs: [deploy]
     runs-on: ubuntu-20.04
     steps:
     - name: Deploy app
