@@ -58,18 +58,18 @@ jobs:
           WITH_V: true
     - name: Discord. The deployment has succeeded
       uses: rjstone/discord-webhook-notify@v1
-      if: ${{success()
+      if: ${{ success() }}
       with:
         severity: info
         text: A new version of Pokedex deployed
         color: '#03a9f4'
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}}}
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
     - name: Discord. The deployment has failed
       uses: rjstone/discord-webhook-notify@v1
-      if: ${{failure()
+      if: ${{ failure() }}
       with:
         severity: info
         text: Deployment failed
         color: '#03a9f4'
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}}} 
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }} 
 
