@@ -49,14 +49,14 @@ jobs:
       if: success()
       with:
         severity: info
-        details: Test Succeeded!
+        details: Deploy Succeeded!
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
     - name: Discord. The deployment has failed
       uses: rjstone/discord-webhook-notify@v1
       if: failure()
       with:
         severity: error
-        details: Test Failed!
+        details: Deploy Failed!
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:    
     needs: [flyDeploy]
