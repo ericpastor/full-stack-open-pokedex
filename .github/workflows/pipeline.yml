@@ -34,7 +34,8 @@ jobs:
           wait-on: http://localhost:5000
 
   flyDeploy:
-    if: ${{ github.event_name == 'push' && !contains(toJson(join(github.event.commits.*.message)),'#skip')}}
+    if: ${{ github.event_name == 'push'}} && 
+        ${{!contains(toJson(join(github.event.commits.*.message, ' ')),'#skip')}}
     needs: [deploy]
     runs-on: ubuntu-20.04
     steps:
