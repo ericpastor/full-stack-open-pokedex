@@ -1,0 +1,16 @@
+on:
+  schedule:
+    - cron: '15 * * * *'
+jobs:
+  health_check:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          url: https://epast-ci-ga.fly.dev/
+          follow-redirect: true
+          max-attempts: 3 
+          retry-delay: 5s
+          retry-all: false
+          
+  
