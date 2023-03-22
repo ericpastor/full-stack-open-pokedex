@@ -32,6 +32,7 @@ jobs:
           command: npm run test:e2e     
           start: npm run start-prod
           wait-on: http://localhost:5000
+
   flyDeploy:
     if: ${{ github.event_name == 'push'}} && ${{!contains(toJson(join(github.event.commits.*.message, ' ')),'#skip')}}
     needs: [deploy]
